@@ -71,12 +71,25 @@ const CustomizationPanel = ({ isValidYear, onZoom, onOptionChange }) => {
       sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 2 }}
     >
       <Typography variant="h5">Display Options</Typography>
-      <OptionCheckbox
-        label="Group data by yearly averages"
-        checked={groupByYearlyAverages}
-        disabled={isValidYear && zoomYear}
-        onChange={handleGroupByYearChange}
-      />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <OptionCheckbox
+          label="Group data by yearly averages"
+          checked={groupByYearlyAverages}
+          disabled={isValidYear && zoomYear}
+          onChange={handleGroupByYearChange}
+        />
+        <Tooltip title="Available if the field Year of Interest is valid and not set.">
+          <InfoIcon
+            fontSize="small"
+            sx={{ cursor: "pointer", color: "info.main" }}
+          />
+        </Tooltip>
+      </Box>
       <Box
         sx={{
           display: "flex",

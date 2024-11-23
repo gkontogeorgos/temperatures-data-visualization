@@ -102,7 +102,7 @@ const App = () => {
       {loading && <Loader />}
       <Box sx={{ padding: 4 }}>
         <Typography variant="h4" gutterBottom>
-          Temperatures Data Visualization
+          Temperature Data Visualization
         </Typography>
         <FileUploader onFileDataParse={handleDataParse} />
         <Snackbar

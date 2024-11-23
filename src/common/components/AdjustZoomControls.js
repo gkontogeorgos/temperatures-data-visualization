@@ -48,7 +48,7 @@ const AdjustZoomControls = ({
           variant="outlined"
           size="small"
           value={zoomingLevel}
-          disabled={!zoomYear}
+          disabled={!isValidYear || !zoomYear}
           slotProps={{
             input: {
               min: 1,

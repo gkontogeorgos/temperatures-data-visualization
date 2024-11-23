@@ -16,7 +16,7 @@ const ZoomControls = ({
         variant="outlined"
         disabled={!!groupByYearlyAverages}
         sx={{ flex: 3 }}
-        value={zoomYear}
+        value={!!groupByYearlyAverages ? "" : zoomYear}
         slotProps={{
           input: {
             min: 1,
@@ -29,7 +29,7 @@ const ZoomControls = ({
       <Button
         variant="contained"
         color="primary"
-        disabled={!zoomYear}
+        disabled={!zoomYear || !!groupByYearlyAverages}
         sx={{ flex: 1, padding: 2 }}
         onClick={handleZoom}
       >
