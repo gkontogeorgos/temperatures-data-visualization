@@ -3,9 +3,9 @@ import { Box, TextField, Button } from "@mui/material";
 
 const ZoomControls = ({
   zoomYear,
+  groupByYearlyAverages,
   setZoomYear,
   handleZoom,
-  groupByYearlyAverages,
 }) => {
   return (
     <Box

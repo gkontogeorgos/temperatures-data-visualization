@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, TextField, Typography } from "@mui/material";
 import SnackbarError from "common/components/SnackbarError";
 
-const FileUploader = ({ onDataParsed }) => {
+const FileUploader = ({ onFileDataParse }) => {
   const [error, setError] = useState("");
 
   const handleFileChange = (event) => {
@@ -27,7 +27,7 @@ const FileUploader = ({ onDataParsed }) => {
               row.map((value, index) => [headers[index], value])
             )
           );
-        onDataParsed(data);
+        onFileDataParse(data);
       } catch (err) {
         setError("Error processing file. Ensure it is properly formatted.");
       }

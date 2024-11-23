@@ -12,11 +12,12 @@ import InfoIcon from "@mui/icons-material/Info";
 import { infoMessage } from "common/constants/constants";
 
 const AdjustZoomControls = ({
-  zoomingLevel,
-  handleSliderChange,
-  handleResetSlider,
   isValidYear,
   zoomYear,
+  zoomingLevel,
+  handleInputChange,
+  handleSliderChange,
+  handleResetSlider,
 }) => {
   return (
     <>
@@ -55,7 +56,7 @@ const AdjustZoomControls = ({
               type: "number",
             },
           }}
-          onChange={(e) => handleSliderChange(+e.target.value)}
+          onChange={handleInputChange}
         />
         <IconButton onClick={handleResetSlider} disabled={zoomingLevel === 1}>
           <ReplayIcon />

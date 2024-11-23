@@ -60,6 +60,12 @@ const CustomizationPanel = ({ isValidYear, onZoom, onOptionChange }) => {
     }
   };
 
+  const handleInputChange = (event) => {
+    const value = Math.max(1, Math.min(100, +event.target.value));
+    setZoomingLevel(value);
+    onOptionChange("zooming", value);
+  };
+
   return (
     <Box
       sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 2 }}
@@ -106,6 +112,7 @@ const CustomizationPanel = ({ isValidYear, onZoom, onOptionChange }) => {
         zoomYear={zoomYear}
         handleResetSlider={handleResetSlider}
         handleSliderChange={handleSliderChange}
+        handleInputChange={handleInputChange}
       />
       <SnackbarError
         open={openSnackbar}

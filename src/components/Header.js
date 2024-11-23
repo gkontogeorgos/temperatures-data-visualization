@@ -5,13 +5,13 @@ import { keyframes } from "@mui/system";
 
 const flash = keyframes`
   0% {
-    color: inherit;  // Initial color
+    color: inherit;
   }
   50% {
     color: yellow;
   }
   100% {
-    color: red;  // Flash color
+    color: red;
   }
 `;
 

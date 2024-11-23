@@ -5,11 +5,11 @@ import TemperatureChart from "components/TemperatureChart";
 import CustomizationPanel from "components/CustomizationPanel";
 import { groupByYear, calculateStdDev } from "utils/dataProcessing";
 import Header from "components/Header";
-import Loader from "common/components/Loader"; // Import the Loader component
+import Loader from "common/components/Loader";
 
 const App = () => {
-  const [data, setData] = useState([]); // Original data
-  const [filteredData, setFilteredData] = useState([]); // Filtered or processed data
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [options, setOptions] = useState({
     showStdDevOverlay: false,
     groupByYearlyAverages: false,
@@ -25,9 +25,9 @@ const App = () => {
   const [error, setError] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [isValidYear, setIsValidYear] = useState(false);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
-  const handleDataParsed = async (parsedData) => {
+  const handleDataParse = async (parsedData) => {
     setLoading(true);
     try {
       const yearlyData = groupByYear(parsedData);
@@ -79,7 +79,6 @@ const App = () => {
     }
   };
 
-  // Handle zooming by year
   const handleZoom = (year) => {
     const zoomedData = data.filter((d) => d.year === year.toString());
     if (zoomedData.length === 0) {
@@ -92,7 +91,6 @@ const App = () => {
     }
   };
 
-  // Close Snackbar
   const handleCloseSnackbar = (_, reason) => {
     if (reason === "clickaway") return;
     setOpenSnackbar(false);
@@ -106,7 +104,7 @@ const App = () => {
         <Typography variant="h4" gutterBottom>
           Temperatures Data Visualization
         </Typography>
-        <FileUploader onDataParsed={handleDataParsed} />
+        <FileUploader onFileDataParse={handleDataParse} />
         <Snackbar
           open={openSnackbar}
           autoHideDuration={4000}
