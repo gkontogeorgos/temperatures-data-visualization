@@ -1,8 +1,8 @@
-# Temperature Data Visualization
+# Temperature Data Visualizer
 
 ## Overview
 
-The **Temperature Data Visualization** is a web-based application that allows users to upload temperature data (in CSV format), visualize temperature trends through interactive charts, and customize display options. The project utilizes **React** and **Highcharts** for a dynamic, user-friendly experience.
+The **Temperature Data Visualizer** is a web-based application that allows users to upload temperature data (in CSV format), visualize temperature trends through interactive charts, and customize display options. The project utilizes **React** and **Highcharts** for a dynamic, user-friendly experience.
 
 ---
 
@@ -20,35 +20,26 @@ The **Temperature Data Visualization** is a web-based application that allows us
 
 ---
 
-## Tech Stack
-
-- **Frontend**: React, Material-UI
-- **Charting**: Highcharts, Highcharts React Official
-- **CSV Parsing**: PapaParse
-- **Development Tools**: React Scripts, Testing Library
-
----
-
 ## Installation
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/temperature-data-visualization.git
-cd temperature-data-visualization
+git clone https://github.com/your-username/temperature-data-visualizer.git
+cd temperature-data-visualizer
 ```
 
 ### Install the Dependencies
 
 ```bash
 npm install
-```
 Installs all the required dependencies
+```
 
 ### Initialize the Project
 
 ```bash
 npm start
-```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
