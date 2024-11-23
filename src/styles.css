@@ -1,0 +1,19 @@
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.chart-container {
+  width: 80%;
+  margin: auto;
+}
+
+.customization-panel {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.customization-panel input,
+.customization-panel button {
+  margin-left: 10px;
+}

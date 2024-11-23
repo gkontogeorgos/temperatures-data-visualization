@@ -1,0 +1,48 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above all other content */
+}
+
+.loader {
+  width: 120px;
+  height: 120px;
+  animation: rotate 1.5s linear infinite; /* Smooth rotation */
+}
+
+.tesla-icon {
+  width: 100%;
+  height: 100%;
+  color: #cc0000; /* Tesla red */
+  animation: pulse 1.5s infinite ease-in-out; /* Pulsing effect */
+}
+
+/* Smooth rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulsing color effect */
+@keyframes pulse {
+  0% {
+    color: #cc0000;
+  }
+  50% {
+    color: #ff5f5f;
+  }
+  100% {
+    color: #cc0000;
+  }
+}

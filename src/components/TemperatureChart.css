@@ -1,0 +1,16 @@
+.highcharts-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: #cc0000 !important;
+  font-size: 16px !important;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+
+.highcharts-loading span {
+  display: block;
+  margin-top: 15%;
+}
