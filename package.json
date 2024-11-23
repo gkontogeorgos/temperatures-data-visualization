@@ -1,5 +1,5 @@
 {
-  "name": "temperature-data-visualizer",
+  "name": "temperature-data-visualization",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -25,24 +25,22 @@ const App = () => {
   const [error, setError] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [isValidYear, setIsValidYear] = useState(false);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false); 
 
-  // Handle parsed CSV data
   const handleDataParsed = async (parsedData) => {
-    setLoading(true); // Show loader
+    setLoading(true);
     try {
       const yearlyData = groupByYear(parsedData);
       setData(yearlyData);
-      setFilteredData(yearlyData); // Initial display shows all data
+      setFilteredData(yearlyData);
     } catch (err) {
       setError("Error processing data: " + err.message);
       setOpenSnackbar(true);
     } finally {
-      setLoading(false); // Hide loader
+      setLoading(false); // Hide loader for highcharts
     }
   };
 
-  // Handle options change
   const handleOptionChange = (key, value) => {
     setOptions((prev) => ({ ...prev, [key]: value }));
 
@@ -50,18 +48,18 @@ const App = () => {
       if (value) {
         const groupedData = data.map((entry) => ({
           ...entry,
-          stdDev: calculateStdDev(entry.monthValues), // Ensure stdDev is recalculated
+          stdDev: calculateStdDev(entry.monthValues),
         }));
         setFilteredData(groupedData);
       } else {
-        setFilteredData(data); // Reset to monthly data
+        setFilteredData(data);
       }
     }
 
     if (key === "showStdDevOverlay" && options.groupByYearlyAverages) {
       const updatedData = filteredData.map((entry) => ({
         ...entry,
-        stdDev: calculateStdDev(entry.monthValues), // Always recalculate
+        stdDev: calculateStdDev(entry.monthValues),
       }));
       setFilteredData(updatedData);
     }
@@ -106,7 +104,7 @@ const App = () => {
       {loading && <Loader />}
       <Box sx={{ padding: 4 }}>
         <Typography variant="h4" gutterBottom>
-          Temperatures Data Visualizer
+          Temperatures Data Visualization
         </Typography>
         <FileUploader onDataParsed={handleDataParsed} />
         <Snackbar
